@@ -1,12 +1,9 @@
-const server = require("./server");
-const startServer = require("./server")
-const makeStore = require("../client/store")
-
-// import startServer from "./server";
-// import makeStore from "../client/store";
+// import server from "./server"
+import startServer from "./socketserver"
+import makeStore from "../client/store"
 
 // socket.io
-const store = makeStore();
+export const store = makeStore();
 startServer(store);
 
 // store.dispatch({
@@ -18,10 +15,8 @@ startServer(store);
 // });
 
 // Old
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
-server.listen(port, function() {
-  console.log("Listening on port", port);
-});
-
-module.exports = store;
+// server.listen(port, function() {
+//   console.log("Listening on port", port);
+// });

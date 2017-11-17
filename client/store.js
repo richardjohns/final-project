@@ -1,17 +1,17 @@
 const React = require('react')
-// import {render} from 'react-dom'
-// import {Provider} from 'react-redux'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
 const {createStore, applyMiddleware, compose} = require('redux')
-const thunkMiddleware = require('redux-thunk')
+import thunkMiddleware from 'redux-thunk'
 
-const reducers = require('./reducers')
+import reducers from './reducers'
 // import App from './components/App'
 
 function makeStore() { return createStore(
   reducers,
   compose(
-    applyMiddleware(thunkMiddleware),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+    applyMiddleware(thunkMiddleware)
+    // window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )
 }

@@ -1,11 +1,13 @@
 import { ADD_PLAYERS } from '../actions/players.js'
 
-const getPlayersFromLocalStorage = () => {
-  const players = window.localStorage.getItem('players')
-  return players ? JSON.parse(players) : []
-}
+// const getPlayersFromLocalStorage = () => {
+//   const players = window.localStorage.getItem('players')
+//   return players ? JSON.parse(players) : []
+// }
 
-export default function players (state = getPlayersFromLocalStorage(), action) {
+const initialState = []
+
+export default function players (state = initialState, action) {
   switch (action.type) {
     case 'INIT':
       return []

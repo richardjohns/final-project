@@ -1,12 +1,12 @@
-const {combineReducers} = require('redux')
+import {combineReducers} from 'redux'
 
-const players = require('./players')
-const round = require('./round')
-const videos = require('./videos')
-const currentPlayer = require('./currentplayer')
-const playerScores = require('./playerScores')
-const game = require('./game')
-const winners = require('./winners')
+import players from './players'
+import round from './round'
+import videos from './videos'
+import currentPlayer from './currentplayer'
+import playerScores from './playerScores'
+import game from './game'
+import winners from './winners'
 
 export default combineReducers({
   players,

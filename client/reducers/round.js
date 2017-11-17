@@ -1,11 +1,8 @@
 import {START_ROUND, NEXT_PLAYER} from '../actions/round.js'
 
-const getRoundFromLocalStorage = () => {
-  const round = window.localStorage.getItem('round')
-  return round ? JSON.parse(round) : {videosPlayed: []}
-}
+const initialState = [];
 
-export default function round (state = getRoundFromLocalStorage(), action) {
+export default function round (state = initialState, action) {
   switch (action.type) {
     case 'INIT':
       return {
